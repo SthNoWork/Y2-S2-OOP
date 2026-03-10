@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("==== Covid-19 Screen Health ===");
-        LinkedHashMap<String,String> qna = new LinkedHashMap<>();
+        LinkedHashMap<String, String> qna = new LinkedHashMap<>();
 
         qna.put("Q1", getStringInput(input, "Q1. Feeling feverish and/or having chills? "));
         qna.put("Q2", getStringInput(input, "Q2. Has there been any use of fever reducing medication within the last 24 hours not due to another health condition? "));
@@ -22,7 +22,7 @@ public class Main {
         System.out.println("=".repeat(35));
         System.out.printf("|%-15s |%-15s |%n", "Questions", "Answer");
         System.out.println("=".repeat(35));
-        //for (Map.Entry<String, String> entry : qna.entrySet()) {
+        // for (Map.Entry<String, String> entry : qna.entrySet()) {
         for (var entry : qna.entrySet()) {
             System.out.printf("|%-15s |%-15s |%n", entry.getKey(), entry.getValue());
             System.out.println("-".repeat(35));
@@ -31,8 +31,7 @@ public class Main {
     }
 
     public static String getStringInput(Scanner input, String question) {
-    System.out.print(question);
-    return input.nextLine();
+        System.out.print(question);
+        return input.nextLine();
+    }
 }
-}
-

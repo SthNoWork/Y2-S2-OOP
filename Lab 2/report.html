@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java Exercises — Y2S2 OOP</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #13161e;
+    --border: #1e2330;
+    --accent: #7ee8a2;
+    --accent2: #5bc8f5;
+    --accent3: #f5a623;
+    --text: #e2e8f0;
+    --muted: #4a5568;
+    --code-bg: #0a0c10;
+    --keyword: #c678dd;
+    --string: #98c379;
+    --number: #d19a66;
+    --comment: #5c6370;
+    --type: #e5c07b;
+    --fn: #61afef;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(126,232,162,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(126,232,162,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    margin-bottom: 64px;
+    animation: fadeDown 0.6s ease both;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 3px 10px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  h1 span {
+    color: var(--accent);
+  }
+
+  .subtitle {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Exercise card */
+  .exercise {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .exercise:nth-child(1) { animation-delay: 0.05s; }
+  .exercise:nth-child(2) { animation-delay: 0.10s; }
+  .exercise:nth-child(3) { animation-delay: 0.15s; }
+  .exercise:nth-child(4) { animation-delay: 0.20s; }
+  .exercise:nth-child(5) { animation-delay: 0.25s; }
+  .exercise:nth-child(6) { animation-delay: 0.30s; }
+  .exercise:nth-child(7) { animation-delay: 0.35s; }
+  .exercise:nth-child(8) { animation-delay: 0.40s; }
+  .exercise:nth-child(9) { animation-delay: 0.45s; }
+  .exercise:nth-child(10) { animation-delay: 0.50s; }
+  .exercise:nth-child(11) { animation-delay: 0.55s; }
+
+  .ex-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chevron { display: none; }
+
+  .ex-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 3px 8px;
+    border-radius: 3px;
+    min-width: 32px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .ex-title {
+    font-size: 15px;
+    font-weight: 600;
+    flex: 1;
+  }
+
+  .ex-desc {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+
+  .ex-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 700px) {
+    .ex-body { grid-template-columns: 1fr; }
+  }
+
+  .panel {
+    padding: 20px;
+  }
+
+  .panel:first-child {
+    border-right: 1px solid var(--border);
+  }
+
+  .panel-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .panel-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.7;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  /* Syntax highlighting */
+  .kw { color: var(--keyword); }
+  .str { color: var(--string); }
+  .num { color: var(--number); }
+  .cmt { color: var(--comment); font-style: italic; }
+  .tp { color: var(--type); }
+  .fn { color: var(--fn); }
+
+  /* Output terminal */
+  .output {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .output-bar {
+    background: #1a1d26;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot.r { background: #ff5f57; }
+  .dot.y { background: #febc2e; }
+  .dot.g { background: #28c840; }
+
+  .output-content {
+    padding: 14px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #a8b5c8;
+  }
+
+  .output-content .prompt {
+    color: var(--accent);
+  }
+
+  .output-content .response {
+    color: var(--text);
+  }
+
+  .output-content .result {
+    color: var(--accent2);
+    font-weight: 600;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="tag">Y2 · S2 · OOP Lab</div>
+    <h1>Java <span>Exercises</span></h1>
+    <p class="subtitle">// Ex1 → Ex11 &nbsp;·&nbsp; Y2S2 OOP</p>
+  </header>
+
+  <!-- EX 1 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">01</span>
+      <div>
+        <div class="ex-title">Hello Name</div>
+        <div class="ex-desc">Scanner · String input · println</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">import</span> java.util.Scanner;
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    System.out.<span class="fn">print</span>(<span class="str">"Input your name: "</span>);
+    <span class="tp">String</span> name = input.<span class="fn">nextLine</span>();
+    input.<span class="fn">close</span>();
+    System.out.<span class="fn">println</span>(<span class="str">"Hello "</span> + name + <span class="str">"!"</span>);
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            <span class="prompt">Input your name: </span><span class="response">Ken</span><br>
+            <span class="result">Hello Ken!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 2 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">02</span>
+      <div>
+        <div class="ex-title">Riel to USD Converter</div>
+        <div class="ex-desc">double · arithmetic · currency conversion</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    System.out.<span class="fn">println</span>(<span class="str">"Program for converting Riels to Dollars."</span>);
+    System.out.<span class="fn">print</span>(<span class="str">"Conversion rate of 1 dollar in Riels: "</span>);
+    <span class="kw">double</span> rate = input.<span class="fn">nextDouble</span>();
+    System.out.<span class="fn">print</span>(<span class="str">"Money to exchange in Riels: "</span>);
+    <span class="kw">double</span> money = input.<span class="fn">nextDouble</span>();
+    input.<span class="fn">close</span>();
+    System.out.<span class="fn">println</span>(money + <span class="str">" RIELS = "</span> + money/rate + <span class="str">" USD"</span>);
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            Program for converting Riels to Dollars.<br>
+            <span class="prompt">Conversion rate of 1 dollar in Riels: </span><span class="response">4100</span><br>
+            <span class="prompt">Money to exchange in Riels: </span><span class="response">20500</span><br>
+            <span class="result">20500.0 RIELS = 5.0 USD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 3 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">03</span>
+      <div>
+        <div class="ex-title">Covid-19 Health Screen</div>
+        <div class="ex-desc">LinkedHashMap · formatted table · helper method</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">import</span> java.util.LinkedHashMap;
+<span class="kw">import</span> java.util.Scanner;
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    System.out.<span class="fn">println</span>(<span class="str">"==== Covid-19 Screen Health ==="</span>);
+    <span class="tp">LinkedHashMap</span>&lt;<span class="tp">String</span>, <span class="tp">String</span>&gt; qna = <span class="kw">new</span> <span class="tp">LinkedHashMap</span>&lt;&gt;();
+    qna.<span class="fn">put</span>(<span class="str">"Q1"</span>, <span class="fn">getStringInput</span>(input, <span class="str">"Q1. Feeling feverish? "</span>));
+    <span class="cmt">// ... Q2–Q8 similarly</span>
+    <span class="kw">for</span> (<span class="kw">var</span> entry : qna.<span class="fn">entrySet</span>()) {
+      System.out.<span class="fn">printf</span>(<span class="str">"|%-15s |%-15s |%n"</span>,
+        entry.<span class="fn">getKey</span>(), entry.<span class="fn">getValue</span>());
+    }
+  }
+  <span class="kw">public static</span> <span class="tp">String</span> <span class="fn">getStringInput</span>(<span class="tp">Scanner</span> s, <span class="tp">String</span> q) {
+    System.out.<span class="fn">print</span>(q);
+    <span class="kw">return</span> s.<span class="fn">nextLine</span>();
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content" style="padding:0;">
+<pre style="background:transparent;border:none;padding:14px 16px;margin:0;font-size:12px;line-height:1.8;color:#a8b5c8;">==== Covid-19 Screen Health ====
+<span class="prompt">Q1. Feeling feverish and/or having chills? </span><span class="response">no</span>
+<span class="prompt">Q2. Has there been any use of fever reducing medication? </span><span class="response">no</span>
+<span class="prompt">Q3. A new cough not due to another health condition? </span><span class="response">no</span>
+<span class="prompt">Q4. New chills not due to another health condition? </span><span class="response">n</span>
+<span class="prompt">Q5. A new sore throat not due to another health condition? </span><span class="response">no</span>
+<span class="prompt">Q6. A new loss of taste or smell? </span><span class="response">no</span>
+<span class="prompt">Q7. Positive COVID-19 test in the past 10 days? </span><span class="response">no</span>
+<span class="prompt">Q8. Close contact with suspected COVID-19 case? </span><span class="response">no</span>
+===================================
+|Questions       |Answer          |
+===================================
+|Q1              |no              |
+-----------------------------------
+|Q2              |no              |
+-----------------------------------
+|Q3              |no              |
+-----------------------------------
+|Q4              |n               |
+-----------------------------------
+|Q5              |no              |
+-----------------------------------
+|Q6              |no              |
+-----------------------------------
+|Q7              |no              |
+-----------------------------------
+|Q8              |no              |
+-----------------------------------</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 4 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">04</span>
+      <div>
+        <div class="ex-title">Seconds to HH:MM:SS</div>
+        <div class="ex-desc">modulo arithmetic · printf formatting</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    System.out.<span class="fn">print</span>(<span class="str">"Input number of seconds: "</span>);
+    <span class="kw">int</span> totalSeconds = input.<span class="fn">nextInt</span>();
+
+    <span class="kw">int</span> hours   = (totalSeconds % <span class="num">86400</span>) / <span class="num">3600</span>;
+    <span class="kw">int</span> minutes = (totalSeconds % <span class="num">3600</span>)  / <span class="num">60</span>;
+    <span class="kw">int</span> seconds =  totalSeconds % <span class="num">60</span>;
+
+    System.out.<span class="fn">print</span>(<span class="str">"Time: "</span>);
+    System.out.<span class="fn">printf</span>(<span class="str">"%02d:%02d:%02d"</span>, hours, minutes, seconds);
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            <span class="prompt">Input number of seconds: </span><span class="response">3661</span><br>
+            Time Corresponding to 3661 seconds is::<br>
+            <span class="result">01:01:01</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 5 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">05</span>
+      <div>
+        <div class="ex-title">Equation Solver (1/x = 1/y + 1/z)</div>
+        <div class="ex-desc">double · formula · parallel resistance</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    System.out.<span class="fn">print</span>(<span class="str">"Please input y: "</span>);
+    <span class="kw">double</span> y = input.<span class="fn">nextDouble</span>();
+    System.out.<span class="fn">print</span>(<span class="str">"Please input z: "</span>);
+    <span class="kw">double</span> z = input.<span class="fn">nextDouble</span>();
+
+    <span class="kw">double</span> x = (y * z) / (y + z);
+    System.out.<span class="fn">println</span>(<span class="str">"Result x = "</span> + x);
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            Program for calculating equation 1/x = 1/y + 1/z<br>
+            <span class="prompt">Please input y: </span><span class="response">6</span><br>
+            <span class="prompt">Please input z: </span><span class="response">12</span><br>
+            <span class="result">Result x = 4.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 6 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">06</span>
+      <div>
+        <div class="ex-title">Prime Number Check</div>
+        <div class="ex-desc">recursion · boolean · divisibility</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static boolean</span> <span class="fn">isPrime</span>(<span class="kw">int</span> n, <span class="kw">int</span> i) {
+    <span class="kw">if</span> (n &lt;= <span class="num">2</span>)    <span class="kw">return</span> (n == <span class="num">2</span>);
+    <span class="kw">if</span> (n % i == <span class="num">0</span>) <span class="kw">return false</span>;
+    <span class="kw">if</span> (i * i &gt; n)  <span class="kw">return true</span>;
+    <span class="kw">return</span> <span class="fn">isPrime</span>(n, i + <span class="num">1</span>); <span class="cmt">// recursive</span>
+  }
+
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    System.out.<span class="fn">print</span>(<span class="str">"Input a number: "</span>);
+    <span class="kw">int</span> num = input.<span class="fn">nextInt</span>();
+    <span class="kw">if</span> (<span class="fn">isPrime</span>(num, <span class="num">2</span>)) {
+      System.out.<span class="fn">println</span>(num + <span class="str">" is a prime number."</span>);
+    } <span class="kw">else</span> {
+      <span class="cmt">// find and print divisor</span>
+    }
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            <span class="prompt">Input a number to check: </span><span class="response">17</span><br>
+            <span class="result">17 is a prime number.</span><br><br>
+            <span class="prompt">Input a number to check: </span><span class="response">12</span><br>
+            <span class="result">12 is not a prime number, because it is divisible by 2.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 7 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">07</span>
+      <div>
+        <div class="ex-title">Vowel / Consonant Counter</div>
+        <div class="ex-desc">char iteration · toLowerCase · counters</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    System.out.<span class="fn">print</span>(<span class="str">"Input a sentence: "</span>);
+    <span class="tp">String</span> sentence = input.<span class="fn">nextLine</span>().<span class="fn">toLowerCase</span>();
+
+    <span class="kw">int</span> vowel = <span class="num">0</span>, consonant = <span class="num">0</span>, space = <span class="num">0</span>;
+
+    <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; sentence.<span class="fn">length</span>(); i++) {
+      <span class="kw">char</span> ch = sentence.<span class="fn">charAt</span>(i);
+      <span class="kw">if</span> (<span class="str">"aeiou"</span>.<span class="fn">indexOf</span>(ch) &gt;= <span class="num">0</span>) vowel++;
+      <span class="kw">else if</span> (ch &gt;= <span class="str">'a'</span> &amp;&amp; ch &lt;= <span class="str">'z'</span>) consonant++;
+      <span class="kw">else if</span> (ch == <span class="str">' '</span>) space++;
+    }
+    System.out.<span class="fn">println</span>(<span class="str">"Vowels: "</span>    + vowel);
+    System.out.<span class="fn">println</span>(<span class="str">"Consonants: "</span> + consonant);
+    System.out.<span class="fn">println</span>(<span class="str">"Spaces: "</span>    + space);
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            <span class="prompt">Input a sentence: </span><span class="response">Hello World</span><br>
+            <span class="result">Count of vowel is: 3</span><br>
+            <span class="result">Count of consonant is: 7</span><br>
+            <span class="result">Count of space is: 1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 8 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">08</span>
+      <div>
+        <div class="ex-title">Smallest of 5 Numbers</div>
+        <div class="ex-desc">int · if comparisons · min tracking</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    <span class="kw">int</span> A = input.<span class="fn">nextInt</span>(), B = input.<span class="fn">nextInt</span>(),
+        C = input.<span class="fn">nextInt</span>(), D = input.<span class="fn">nextInt</span>(),
+        E = input.<span class="fn">nextInt</span>();
+
+    <span class="kw">int</span> min = A;
+    <span class="kw">if</span> (B &lt; min) min = B;
+    <span class="kw">if</span> (C &lt; min) min = C;
+    <span class="kw">if</span> (D &lt; min) min = D;
+    <span class="kw">if</span> (E &lt; min) min = E;
+
+    System.out.<span class="fn">println</span>(<span class="str">"Smallest: "</span> + min);
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            <span class="prompt">Input value of A: </span><span class="response">10</span><br>
+            <span class="prompt">Input value of B: </span><span class="response">3</span><br>
+            <span class="prompt">Input value of C: </span><span class="response">7</span><br>
+            <span class="prompt">Input value of D: </span><span class="response">15</span><br>
+            <span class="prompt">Input value of E: </span><span class="response">6</span><br>
+            <span class="result">The smallest number among A,B,C,D,E is: 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 9 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">09</span>
+      <div>
+        <div class="ex-title">Biggest Number in Dynamic Array</div>
+        <div class="ex-desc">ArrayList · Collections.max · while loop</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">import</span> java.util.ArrayList;
+<span class="kw">import</span> java.util.Collections;
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Scanner</span> input = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+    <span class="tp">ArrayList</span>&lt;<span class="tp">Integer</span>&gt; arr = <span class="kw">new</span> <span class="tp">ArrayList</span>&lt;&gt;();
+    <span class="kw">char</span> choice = <span class="str">'y'</span>;
+    <span class="kw">int</span> index = <span class="num">0</span>;
+
+    <span class="kw">while</span> (choice == <span class="str">'y'</span> || choice == <span class="str">'Y'</span>) {
+      System.out.<span class="fn">print</span>(<span class="str">"Value at index "</span> + index + <span class="str">": "</span>);
+      arr.<span class="fn">add</span>(input.<span class="fn">nextInt</span>());
+      System.out.<span class="fn">print</span>(<span class="str">"Add more (y/n)?: "</span>);
+      choice = input.<span class="fn">next</span>().<span class="fn">charAt</span>(<span class="num">0</span>);
+      index++;
+    }
+    System.out.<span class="fn">println</span>(<span class="str">"Biggest: "</span> + Collections.<span class="fn">max</span>(arr));
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            <span class="prompt">Value at index 0: </span><span class="response">42</span><br>
+            <span class="prompt">Add more (y/n)?: </span><span class="response">y</span><br>
+            <span class="prompt">Value at index 1: </span><span class="response">99</span><br>
+            <span class="prompt">Add more (y/n)?: </span><span class="response">y</span><br>
+            <span class="prompt">Value at index 2: </span><span class="response">7</span><br>
+            <span class="prompt">Add more (y/n)?: </span><span class="response">n</span><br>
+            <span class="result">The biggest number among in Array is: 99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 10 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">10</span>
+      <div>
+        <div class="ex-title">Math Menu Calculator</div>
+        <div class="ex-desc">while loop · switch · divide by zero guard</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="kw">boolean</span> running = <span class="kw">true</span>;
+    <span class="kw">while</span> (running) {
+      System.out.<span class="fn">println</span>(<span class="str">"=== Math Menu ==="</span>);
+      System.out.<span class="fn">println</span>(<span class="str">"1. Addition  2. Subtraction"</span>);
+      System.out.<span class="fn">println</span>(<span class="str">"3. Multiply  4. Division  5. Quit"</span>);
+      <span class="kw">int</span> option = input.<span class="fn">nextInt</span>();
+      <span class="kw">if</span> (option == <span class="num">5</span>) <span class="kw">break</span>;
+      <span class="kw">double</span> A = input.<span class="fn">nextDouble</span>(), B = input.<span class="fn">nextDouble</span>();
+      <span class="kw">switch</span> (option) {
+        <span class="kw">case</span> <span class="num">1</span>: System.out.<span class="fn">println</span>(A + <span class="str">" + "</span> + B + <span class="str">" = "</span> + (A+B)); <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="num">2</span>: System.out.<span class="fn">println</span>(A + <span class="str">" - "</span> + B + <span class="str">" = "</span> + (A-B)); <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="num">3</span>: System.out.<span class="fn">println</span>(A + <span class="str">" x "</span> + B + <span class="str">" = "</span> + (A*B)); <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="num">4</span>: <span class="kw">if</span> (B==<span class="num">0</span>) System.out.<span class="fn">println</span>(<span class="str">"Cannot divide by zero."</span>);
+                 <span class="kw">else</span> System.out.<span class="fn">println</span>(A + <span class="str">" / "</span> + B + <span class="str">" = "</span> + (A/B)); <span class="kw">break</span>;
+      }
+    }
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            === Math Menu ===<br>
+            1. Addition  2. Subtraction<br>
+            3. Multiply  4. Division  5. Quit<br>
+            <span class="prompt">Choose option: </span><span class="response">4</span><br>
+            <span class="prompt">Value A: </span><span class="response">10</span><br>
+            <span class="prompt">Value B: </span><span class="response">0</span><br>
+            <span class="result">Cannot divide by zero.</span><br>
+            <span class="prompt">Choose option: </span><span class="response">1</span><br>
+            <span class="prompt">Value A: </span><span class="response">5</span><br>
+            <span class="prompt">Value B: </span><span class="response">3</span><br>
+            <span class="result">Answer of A + B = 8.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EX 11 -->
+  <div class="exercise">
+    <div class="ex-header">
+      <span class="ex-num">11</span>
+      <div>
+        <div class="ex-title">Book Class & Object Array</div>
+        <div class="ex-desc">class definition · object array · field assignment</div>
+      </div>
+    </div>
+    <div class="ex-body">
+      <div class="panel">
+        <div class="panel-label">Source</div>
+        <pre><span class="kw">class</span> <span class="tp">Book</span> {
+  <span class="kw">int</span> id;
+  <span class="tp">String</span> title, author;
+  <span class="kw">int</span> year;
+  <span class="kw">double</span> price;
+}
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+  <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+    <span class="tp">Book</span> b1 = <span class="kw">new</span> <span class="tp">Book</span>();
+    b1.id = <span class="num">1</span>; b1.title = <span class="str">"Java Basics"</span>;
+    b1.author = <span class="str">"John"</span>; b1.year = <span class="num">2020</span>; b1.price = <span class="num">25.5</span>;
+
+    <span class="tp">Book</span> b2 = <span class="kw">new</span> <span class="tp">Book</span>();
+    b2.id = <span class="num">2</span>; b2.title = <span class="str">"Data Structures"</span>;
+    b2.author = <span class="str">"Alice"</span>; b2.year = <span class="num">2021</span>; b2.price = <span class="num">30.0</span>;
+
+    <span class="tp">Book</span>[] bookArr = { b1, b2 };
+  }
+}</pre>
+      </div>
+      <div class="panel">
+        <div class="panel-label">Output</div>
+        <div class="output">
+          <div class="output-bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+          <div class="output-content">
+            <span class="cmt">// No console output — objects stored in memory</span><br><br>
+            bookArr[0] → Book {<br>
+            &nbsp;&nbsp;<span class="result">id=1, title="Java Basics"</span><br>
+            &nbsp;&nbsp;<span class="result">author="John", year=2020, price=25.5</span><br>
+            }<br>
+            bookArr[1] → Book {<br>
+            &nbsp;&nbsp;<span class="result">id=2, title="Data Structures"</span><br>
+            &nbsp;&nbsp;<span class="result">author="Alice", year=2021, price=30.0</span><br>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
