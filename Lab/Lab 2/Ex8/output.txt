@@ -1,0 +1,6 @@
+Input value of A: 39
+Input value of B: 67
+Input value of C: 69
+Input value of D: 420
+Input value of E: 8008
+The smallest number among A, B, C, D, and E is: 39

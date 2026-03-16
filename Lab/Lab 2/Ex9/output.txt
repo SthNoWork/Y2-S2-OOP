@@ -1,0 +1,9 @@
+Input value in Array at index 0: 67
+Do you want to add more (y/n)?: y
+Input value in Array at index 1: 69
+Do you want to add more (y/n)?: y
+Input value in Array at index 2: 420
+Do you want to add more (y/n)?: y
+Input value in Array at index 3: 80085
+Do you want to add more (y/n)?: n
+The biggest number among in Array is: 80085

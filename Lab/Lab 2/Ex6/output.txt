@@ -1,0 +1,7 @@
+Input a number to check whether it is a prime number: 13
+13 is a prime number.
+
+=== CUT ===
+
+Input a number to check whether it is a prime number: 10
+10 is not a prime number, because it is divisible by 2.

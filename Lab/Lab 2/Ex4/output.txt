@@ -1,0 +1,2 @@
+Input number of seconds: 3042
+Time Corresponding to 3042seconds is:: 00:50:42

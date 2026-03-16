@@ -1,0 +1,61 @@
+=== Math Menu ===
+1. Addition (+)
+2. Substruction (-)
+3. Multiplication (x)
+4. Division (/)
+5. Quit
+Please choose an option: 1
+Please input value A: 69
+Please input value B: 67
+=== Addition (+)===
+Answer of A + B = 136.0
+Do you want to continue? If no go to Menu.
+Input your answer (y/n): y
+
+=== CUT ===
+
+=== Math Menu ===
+1. Addition (+)
+2. Substruction (-)
+3. Multiplication (x)
+4. Division (/)
+5. Quit
+Please choose an option: 2
+Please input value A: 80885
+Please input value B: 420
+=== Substruction (-)===
+Answer of A - B = 80465.0
+Do you want to continue? If no go to Menu.
+Input your answer (y/n): y
+
+=== CUT ===
+
+=== Math Menu ===
+1. Addition (+)
+2. Substruction (-)
+3. Multiplication (x)
+4. Division (/)
+5. Quit
+Please choose an option: 3
+Please input value A: 67
+Please input value B: 69
+=== Multiplication (x)===
+Answer of A x B = 4623.0
+Do you want to continue? If no go to Menu.
+Input your answer (y/n): y
+
+=== CUT ===
+
+=== Math Menu ===
+1. Addition (+)
+2. Substruction (-)
+3. Multiplication (x)
+4. Division (/)
+5. Quit
+Please choose an option: 4
+Please input value A: 123 
+Please input value B: 11
+=== Division (/)===
+Answer of A / B = 11.181818181818182
+Do you want to continue? If no go to Menu.
+Input your answer (y/n): n

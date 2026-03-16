@@ -1,0 +1,28 @@
+==== Covid-19 Screen Health ===
+Q1. Feeling feverish and/or having chills? yes
+Q2. Has there been any use of fever reducing medication within the last 24 hours not due to another health condition?No
+Q3. A new cough that is not due to another health condition? no
+Q4. New chills that are not due to another health condition? no
+Q5. A new sore throat that is not due to another health condition? yes
+Q6. A new loss of taste or smell? no
+Q7. Have you had a positive test for the virus that causes COVID-19 disease within the past 10 days? no
+Q8. In the past 14 days, have you had close contact (within about 6 feet for 15 minutes or more) with someone with suspected or confirmed COVID-19? yes
+===================================
+|Questions       |Answer          |
+===================================
+|Q1              |yes             |
+-----------------------------------
+|Q2              |No              |
+-----------------------------------
+|Q3              |no              |
+-----------------------------------
+|Q4              |no              |
+-----------------------------------
+|Q5              |yes             |
+-----------------------------------
+|Q6              |no              |
+-----------------------------------
+|Q7              |no              |
+-----------------------------------
+|Q8              |yes             |
+-----------------------------------

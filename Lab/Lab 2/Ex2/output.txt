@@ -1,0 +1,4 @@
+Program for converting money in Riels to Dollars.
+Please input conversion rate of 1 dollar in Riels: 4000
+Please input money to exchange in Riels: 50000
+50000.0 RIELS = 12.5 USD

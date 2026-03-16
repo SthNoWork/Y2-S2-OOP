@@ -1,0 +1,4 @@
+Input a sentence: hello mother trucker
+Count of vowel is: 6
+Count of consonant is: 12
+Count of space is: 2

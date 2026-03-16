@@ -1,0 +1,4 @@
+Program for calculating equation 1/x = 1/y + 1/z to find value of x
+Please input y: 23
+Please input z: 10
+Result x = 6.96969696969697
