@@ -7,7 +7,6 @@ Please input conversion rate of 1 dollar in Riels: 4000
 Please input money to exchange in Riels: 2200
 2200 RIELS = 0.55 USD
 */
-package Ex2;
 
 import java.util.Scanner;
 

@@ -1,0 +1,93 @@
+Phone Settings:
+1. General           > 
+2. WiFi              > 
+3. Bluetooth         > 
+4. Mobile Data       > 
+5. Hotspot           > 
+6. Notifications     > 
+0. Quit
+Option: 1
+
+=== CUT ===
+
+General:
+1. About             >
+2. Software update   >
+3. Storage           >
+0. Back
+Option: 1
+
+General > About:
+Name                 iPhone
+Model                IXs
+Version              18.5
+0. Back
+Option: 0
+
+General > Software Update:
+====================
+Software is up to date
+====================
+0. Back
+Option: 0
+
+General:
+1. About             >
+2. Software update   >
+3. Storage           >
+0. Back
+Option: 3
+
+General > Storage:
+============================
+The Feature is not available
+============================
+0. Back
+Option: 0
+
+=== CUT ===
+
+Phone Settings:
+1. General           >
+2. WiFi              >
+3. Bluetooth         >
+4. Mobile Data       >
+5. Hotspot           >
+6. Notifications     >
+0. Quit
+Option: 2
+
+Wi-Fi:
+Status               On
+Network              I-Coffee
+1. Other Networks    >
+0. Back
+Option: 0
+
+Phone Settings:
+1. General           >
+2. WiFi              >
+3. Bluetooth         >
+4. Mobile Data       >
+5. Hotspot           >
+6. Notifications     >
+0. Quit
+Option: 3
+
+Title:
+============================
+The Feature is not available
+============================
+0. Back
+Option: 0
+
+Phone Settings:
+1. General           >
+2. WiFi              >
+3. Bluetooth         >
+4. Mobile Data       >
+5. Hotspot           >
+6. Notifications     >
+0. Quit
+Option: 0
+Goodbye!

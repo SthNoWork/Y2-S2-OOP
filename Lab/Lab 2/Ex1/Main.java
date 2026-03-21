@@ -6,7 +6,6 @@ Console:
 Input your name: Visal
 Hello Visal!
 */
-
 package Ex1;
 
 import java.util.Scanner;

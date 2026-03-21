@@ -26,8 +26,11 @@ public class Main {
         System.out.print("Please input z: ");
         double z = input.nextDouble();
 
+        input.close();
+
         double x = (y * z) / (y + z);
 
         System.out.println("Result x = " + x);
+
     }
 }

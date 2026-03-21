@@ -1,0 +1,14 @@
+Program for calculating roots of quadratic equation
+ax² + bx + c = 0
+Input value of a: 4
+Input value of b: 3
+Input value of c: 1
+Equation roots are complex!
+
+=== CUT ===
+
+ax² + bx + c = 0
+Input value of a: 4
+Input value of b: 6
+Input value of c: 2
+X1 = -0.5732233047033631, X2 = -0.9267766952966369

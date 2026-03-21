@@ -41,12 +41,10 @@ Please choose an option:
 
 package Ex10;
 
-import java.util.Scanner;
+import utils.InputUtils;
 
 public class Main {
     public static void main(String[] args) {
-
-        Scanner input = new Scanner(System.in);
         boolean running = true;
 
         while (running) {
@@ -57,9 +55,7 @@ public class Main {
             System.out.println("3. Multiplication (x)");
             System.out.println("4. Division (/)");
             System.out.println("5. Quit");
-            System.out.print("Please choose an option: ");
-
-            int option = input.nextInt();
+            int option = InputUtils.getInteger("Please choose an option: ");
 
             if (option < 1 || option > 5) {
                 System.out.println("Please choose an option again.");
@@ -71,11 +67,8 @@ public class Main {
                 break;
             }
 
-            System.out.print("Please input value A: ");
-            double A = input.nextDouble();
-
-            System.out.print("Please input value B: ");
-            double B = input.nextDouble();
+            double A = InputUtils.getDouble("Please input value A: ");
+            double B = InputUtils.getDouble("Please input value B: ");
 
             switch (option) {
                 case 1:
@@ -104,14 +97,16 @@ public class Main {
             }
 
             System.out.print("Do you want to continue? If no go to Menu.\n");
-            System.out.print("Input your answer (y/n): ");
-            char ans = input.next().charAt(0);
-
-            if (ans == 'n' || ans == 'N') {
-                running = false;
+            char ans;
+            while (true) {
+                ans = Character.toLowerCase(InputUtils.getChar("Input your answer (y/n): "));
+                if (ans == 'y' || ans == 'n') {
+                    break;
+                }
+                System.out.println("Invalid input. Please enter y or n.");
             }
-        }
 
-        input.close();
+            // "n" returns to menu; quitting is handled by option 5.
+        }
     }
 }
