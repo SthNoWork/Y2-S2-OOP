@@ -1,10 +1,10 @@
 Phone Settings:
-1. General           > 
-2. WiFi              > 
-3. Bluetooth         > 
-4. Mobile Data       > 
-5. Hotspot           > 
-6. Notifications     > 
+1. General           >
+2. WiFi              >
+3. Bluetooth         >
+4. Mobile Data       >
+5. Hotspot           >
+6. Notifications     >
 0. Quit
 Option: 1
 

@@ -1,0 +1,11 @@
+How many number to be input?
+Number of input: 5
+Value #1: 23
+Value #2: 67
+Value #3: 100
+Value #4: 32
+Value #5: 45
+Max: 100.0
+Min: 0.0
+Average: 53.4
+Sum: 267.0

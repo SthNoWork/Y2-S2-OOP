@@ -102,4 +102,14 @@ public class InputUtils {
             System.out.println("Invalid option. Please enter a number from 0 to " + maxOption + ".");
         }
     }
+
+    public static boolean getYesOrNo(String comment) {
+        while (true) {
+            char c = Character.toUpperCase(getChar(comment));
+            if (c == 'Y' || c == 'N') {
+                return c == 'Y';
+            }
+            System.out.println("Invalid input. Please enter Y or N.");
+        }
+    }
 }
