@@ -1,0 +1,48 @@
+====== Menu ======
+1. Create a student
+2. List students
+0. Quit
+Choose an option: 1
+
+Student #1:
+Id: 123
+Name: josh
+Age: 21
+A student is added to the list
+
+=== CUT ===
+
+====== Menu ======
+1. Create a student
+2. List students
+0. Quit
+Choose an option: 1
+
+Student #2:
+Id: 09
+Name: hiter
+Age: 21
+A student is added to the list
+
+=== CUT ===
+
+====== Menu ======
+1. Create a student
+2. List students
+0. Quit
+Choose an option: 2
+
+================================
+| No | ID   | Name       | Age |
+================================
+| 1  | 123  | josh       | 21  |
+| 2  | 09   | hiter      | 21  |
+================================
+
+=== CUT ===
+
+====== Menu ======
+1. Create a student
+2. List students
+0. Quit
+Choose an option: 0
