@@ -1,0 +1,88 @@
+====== Menu ======
+1. View a music store
+2. Add a song
+3. Create an album
+4. Quit
+Choose an option: 1
+
+====== Music Store ======
+
+=== CUT ===
+
+====== Menu ======
+1. View a music store
+2. Add a song
+3. Create an album
+4. Quit
+Choose an option: 2
+
+===== Add a new song ====
+No albums available. Please create an album first.
+
+=== CUT ===
+
+====== Menu ======
+1. View a music store
+2. Add a song
+3. Create an album
+4. Quit
+Choose an option: 3
+
+===== Create new album ====
+Album title: kek
+Genre: pain
+New album created successfully!
+
+=== CUT ===
+
+====== Menu ======
+1. View a music store
+2. Add a song
+3. Create an album
+4. Quit
+Choose an option: 1
+
+====== Music Store ======
+Album: kek
+None of song
+
+=== CUT ===
+
+====== Menu ======
+1. View a music store
+2. Add a song
+3. Create an album
+4. Quit
+Choose an option: 2
+
+===== Add a new song ====
+Select following album:
+1. kek
+Choose an opt: 1
+Song title: melo
+Signer: thyself
+Length: 3mins
+Price: 20
+A new song added to the album
+
+=== CUT ===
+
+====== Menu ======
+1. View a music store
+2. Add a song
+3. Create an album
+4. Quit
+Choose an option: 1
+
+====== Music Store ======
+Album: kek
+| 1 | melo | thyself | 3mins | $20 |
+
+=== CUT ===
+
+====== Menu ======
+1. View a music store
+2. Add a song
+3. Create an album
+4. Quit
+Choose an option: 4

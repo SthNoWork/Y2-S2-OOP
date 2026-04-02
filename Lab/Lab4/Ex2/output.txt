@@ -1,0 +1,55 @@
+==== Menu ====
+1. View all students
+2. Add a new student
+3. Delete a student
+0. Quit
+Choose an option: 1
+No students found.
+
+=== CUT ===
+
+==== Menu ====
+1. View all students
+2. Add a new student
+3. Delete a student
+0. Quit
+Choose an option: 3
+
+==== Delete a student ====
+Input student ID: 1
+Student is not found. Try again
+
+=== CUT ===
+
+==== Menu ====
+1. View all students
+2. Add a new student
+3. Delete a student
+0. Quit
+Choose an option: 2
+Input student ID: 67
+Input student Name: Caro
+Input student Age: 20
+
+=== CUT ===
+
+==== Menu ====
+1. View all students
+2. Add a new student
+3. Delete a student
+0. Quit
+Choose an option: 3
+
+==== Delete a student ====
+Input student ID: 67
+The following student has been deleted.
+| 1 | 67 | Caro | 20 |
+
+=== CUT ===
+
+==== Menu ====
+1. View all students
+2. Add a new student
+3. Delete a student
+0. Quit
+Choose an option: 0

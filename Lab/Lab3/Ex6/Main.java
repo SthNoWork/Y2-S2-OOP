@@ -10,12 +10,6 @@ Implement an application in Java to create your Math class with following return
 
 package Ex6;
 
-public class Main {
-    public static void main(String[] args) {
-
-    }
-}
-
 class Math {
     static int factorial(int n) {
         if (n <= 1)

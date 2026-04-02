@@ -1,0 +1,90 @@
+==== Menu ===
+1. View all books
+2. Add a new book
+3. Update a book
+4. Quit
+Choose an option: 1
+==== View all books ====
+No books found.
+
+=== CUT ===
+
+==== Menu ===
+1. View all books
+2. Add a new book
+3. Update a book
+4. Quit
+Choose an option: 3
+==== Update a book ====
+No books to update.
+
+=== CUT ===
+
+==== Menu ===
+1. View all books
+2. Add a new book
+3. Update a book
+4. Quit
+Choose an option: 2
+==== Add a new book ====
+ISBN: hello
+Title: how to not suck
+Price: 69
+Author: Caro
+Added new book successfully.
+
+=== CUT ===
+
+==== Menu ===
+1. View all books
+2. Add a new book
+3. Update a book
+4. Quit
+Choose an option: 1
+==== View all books ====
+Book #1
+ISBN: hello
+Title: how to not suck
+Price: 69.0
+Author: Caro
+
+==== Menu ===
+1. View all books
+2. Add a new book
+3. Update a book
+4. Quit
+Choose an option: 3
+==== Update a book ====
+Input ISBN: 20
+Book is not found. Try again
+Input ISBN: hello
+Please update the following:
+ISBN: 67
+Title: How to suck
+Price: 20
+Author: me
+Book updated successfully.
+
+=== CUT ===
+
+==== Menu ===
+1. View all books
+2. Add a new book
+3. Update a book
+4. Quit
+Choose an option: 1
+==== View all books ====
+Book #1
+ISBN: 67
+Title: How to suck
+Price: 20.0
+Author: me
+
+=== CUT ===
+
+==== Menu ===
+1. View all books
+2. Add a new book
+3. Update a book
+4. Quit
+Choose an option: 4

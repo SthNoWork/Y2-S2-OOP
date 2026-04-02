@@ -1,0 +1,25 @@
+Student #1:
+Id: 111
+Name: Tola
+Age: 17
+Do you want to add more? (Y/N): y  
+
+Student #2:
+Id: 232
+Name: Makara
+Age: 16
+Do you want to add more? (Y/N): y
+
+Student #3:
+Id: 333
+Name: kompheak
+Age: 29
+Do you want to add more? (Y/N): n
+
+===========================================
+| No  | ID       | Name            | Age  |
+===========================================
+| 1   | 111      | Tola            | 17   |
+| 2   | 232      | Makara          | 16   |
+| 3   | 333      | kompheak        | 29   |
+===========================================

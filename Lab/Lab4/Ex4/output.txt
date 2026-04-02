@@ -1,0 +1,71 @@
+==== Menu ===
+1. Search 
+2. View all videos
+3. Add a new video
+4. Quit
+Choose an option: 1
+==== Video Search ====
+No videos available.
+
+=== CUT ===
+
+==== Menu ===
+1. Search
+2. View all videos
+3. Add a new video
+4. Quit
+Choose an option: 2
+==== View all videos ====
+No videos available.
+
+=== CUT ===
+
+==== Menu ===
+1. Search
+2. View all videos
+3. Add a new video
+4. Quit
+Choose an option: 3
+==== Add a new video ====
+Title: GOF
+Uploader: idk
+Length (minutes): 10
+Type: horror
+Added new video successfully.
+
+=== CUT ===
+
+==== Menu ===
+1. Search
+2. View all videos
+3. Add a new video
+4. Quit
+Choose an option: 2
+==== View all videos ====
+Video #1
+Title: GOF
+Uploader: idk
+Length (minutes): 10.0
+Type: horror
+
+=== CUT ===
+
+==== Menu ===
+1. Search
+2. View all videos
+3. Add a new video
+4. Quit
+Choose an option: 1
+==== Video Search ====
+Input title: GOF
+1 videos found:
+1. GOF - idk
+
+=== CUT ===
+
+==== Menu ===
+1. Search
+2. View all videos
+3. Add a new video
+4. Quit
+Choose an option: 4
