@@ -1,0 +1,39 @@
+==== Menu ===
+1. Current date and time
+2. Calculate days btw two dates
+3. Find the day of the week
+4. Quit
+Choose an opt: 1
+Current datetime is: 06-4-2026 19:13:34
+
+=== CUT ===
+
+==== Menu ===
+1. Current date and time
+2. Calculate days btw two dates
+3. Find the day of the week
+4. Quit
+Choose an opt: 2
+First date (dd/mm/yyyy): 02/03/2024
+Second date (dd/mm/yyyy): 03/05/2024
+Difference between two dates is: 62 days
+
+=== CUT ===
+
+==== Menu ===
+1. Current date and time
+2. Calculate days btw two dates
+3. Find the day of the week
+4. Quit
+Choose an opt: 3
+Input a date: 03/02/2024
+The day is: Saturday
+
+=== CUT ===
+
+==== Menu ===
+1. Current date and time
+2. Calculate days btw two dates
+3. Find the day of the week
+4. Quit
+Choose an opt: 0

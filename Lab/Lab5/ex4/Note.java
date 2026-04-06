@@ -12,7 +12,8 @@ public class Note {
     // ── Helpers ───────────────────────────────────────────────
     private static List<String> load() throws IOException {
         Path p = Paths.get(PATH);
-        if (!Files.exists(p)) return new ArrayList<>();
+        if (!Files.exists(p))
+            return new ArrayList<>();
         return new ArrayList<>(Files.readAllLines(p));
     }
 
@@ -41,10 +42,14 @@ public class Note {
         System.out.println("2. Update at line");
         System.out.println("3. Delete line");
         System.out.print("Choose an opt: ");
-        int opt = sc.nextInt(); sc.nextLine();
-        if      (opt == 1) append(sc);
-        else if (opt == 2) update(sc);
-        else if (opt == 3) delete(sc);
+        int opt = sc.nextInt();
+        sc.nextLine();
+        if (opt == 1)
+            append(sc);
+        else if (opt == 2)
+            update(sc);
+        else if (opt == 3)
+            delete(sc);
     }
 
     // ── Edit Operations ───────────────────────────────────────
@@ -60,7 +65,8 @@ public class Note {
     private static void update(Scanner sc) throws IOException {
         List<String> lines = load();
         System.out.print("Update line number: ");
-        int num = sc.nextInt(); sc.nextLine();
+        int num = sc.nextInt();
+        sc.nextLine();
         System.out.println("Input a string for line #" + num + ":");
         lines.set(num - 1, sc.nextLine());
         save(lines);
@@ -70,7 +76,8 @@ public class Note {
     private static void delete(Scanner sc) throws IOException {
         List<String> lines = load();
         System.out.print("Delete line number: ");
-        int num = sc.nextInt(); sc.nextLine();
+        int num = sc.nextInt();
+        sc.nextLine();
         lines.remove(num - 1);
         save(lines);
         System.out.println("Line #" + num + " is deleted.");

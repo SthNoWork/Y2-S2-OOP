@@ -1,0 +1,49 @@
+==== Menu ===
+1. Add new students
+2. Delete multiple students
+3. Quit
+Choose an opt: 1
+
+Student #1:
+Id: 32
+Name: HE
+Age: 29
+Do you want to add more (y/n)?: y
+
+Student #2:
+Id: 13
+Name: c32
+Age: 12
+Do you want to add more (y/n)?: n
+
+=== CUT ===
+
+==== Menu ===
+1. Add new students
+2. Delete multiple students
+3. Quit
+Choose an opt: 2
+
+The following table:
+========================================
+ |No  | ID     | Name            | Age |
+========================================
+ |1   | 32     | HE              | 29  |
+ |2   | 13     | c32             | 12  |
+========================================
+
+== DELETION =====
+Input student #1 ID: 1
+Student with ID 1 not found!
+Do you want to delete more (y/n)?: y
+Input student #2 ID: 32
+Student with ID 32 deleted
+Do you want to delete more (y/n)?: n
+
+=== CUT ===
+
+==== Menu ===
+1. Add new students
+2. Delete multiple students
+3. Quit
+Choose an opt: 0

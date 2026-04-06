@@ -1,0 +1,73 @@
+==== Menu ===
+1. View my note
+2. Edit
+3. Quit
+Choose an option: 2
+==== Edit following note ====
+*****************************
+*****************************
+1. Append new line
+2. Update at line
+3. Delete line
+Choose an opt: 1
+Input a string for line #1:
+HELLO PEOPLE
+Line #1 is appended to the note.
+
+=== CUT ===
+
+==== Menu ===
+1. View my note
+2. Edit
+3. Quit
+Choose an option: 1
+==== View note ====
+*****************************
+1| HELLO PEOPLE
+*****************************
+
+=== CUT ===
+
+==== Menu ===
+1. View my note
+2. Edit
+3. Quit
+Choose an option: 2
+==== Edit following note ====
+*****************************
+1| HELLO PEOPLE
+*****************************
+1. Append new line
+2. Update at line
+3. Delete line
+Choose an opt: 1
+Input a string for line #2:
+MYGOD
+Line #2 is appended to the note.
+
+=== CUT ===
+
+==== Menu ===
+1. View my note
+2. Edit
+3. Quit
+Choose an option: 2
+==== Edit following note ====
+*****************************
+1| HELLO PEOPLE
+2| MYGOD
+*****************************
+1. Append new line
+2. Update at line
+3. Delete line
+Choose an opt: 3
+Delete line number: 2
+Line #2 is deleted.
+
+=== CUT ===
+
+==== Menu ===
+1. View my note
+2. Edit
+3. Quit
+Choose an option: 0

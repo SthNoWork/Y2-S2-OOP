@@ -1,0 +1,38 @@
+==== Menu ===
+1. View all
+2. Add new
+3. Quit
+Choose an option: 2
+==== Add new resource ====
+1. Teacher
+2. Student
+3. Security guard
+Choose an opt: 1
+First Name: Tola
+Last Name: ME
+Sex: F
+Email: @gmail.com
+Subject: OOP,Python
+Salary: 100
+
+=== CUT ===
+
+==== Menu ===
+1. View all
+2. Add new
+3. Quit
+Choose an option: 1
+==== Teacher ====
+1. [Tola ME][F][@gmail.com][OOP,Python][100$]
+=========== Student ===========
+==== Student ====
+=========== Security guard ===========
+==== Security guard ====
+
+=== CUT ===
+
+==== Menu ===
+1. View all
+2. Add new
+3. Quit
+Choose an option:

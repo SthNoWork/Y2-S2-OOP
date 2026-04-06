@@ -1,0 +1,109 @@
+==== Menu ===
+1. View all lines
+2. View all rectangles
+3. View all triangles
+4. Add a new shape
+5. Quit
+Choose an opt: 4
+
+==== Add new shape ====
+Select a shape:
+1. Line
+2. Rectangle
+3. Triangle
+Choose an opt: 1
+Input length: 5
+
+=== CUT ===
+
+==== Menu ===
+1. View all lines
+2. View all rectangles
+3. View all triangles
+4. Add a new shape
+5. Quit
+Choose an opt: 4
+
+==== Add new shape ====
+Select a shape:
+1. Line
+2. Rectangle
+3. Triangle
+Choose an opt: 2
+Input width: 5
+Input height: 3
+
+=== CUT ===
+
+==== Menu ===
+1. View all lines
+2. View all rectangles
+3. View all triangles
+4. Add a new shape
+5. Quit
+Choose an opt: 4
+==== Add new shape ====
+Select a shape:
+1. Line
+2. Rectangle
+3. Triangle
+Choose an opt: 3
+Input width: 10
+Input height: 7
+
+=== CUT ===
+
+==== Menu ===
+1. View all lines
+2. View all rectangles
+3. View all triangles
+4. Add a new shape
+5. Quit
+Choose an opt: 1
+==== List all lines ====
+1. length: 5
+_____
+
+=== CUT ===
+
+==== Menu ===
+1. View all lines
+2. View all rectangles
+3. View all triangles
+4. Add a new shape
+5. Quit
+Choose an opt: 2
+==== List all rectangles ====
+1. Width: 5, Height: 3
+*****
+*   *
+*****
+
+=== CUT ===
+
+==== Menu ===
+1. View all lines
+2. View all rectangles
+3. View all triangles
+4. Add a new shape
+5. Quit
+Choose an opt: 3
+==== List all triangles ====
+1. Width: 10, Height: 7
+*
+**
+* *
+*  *
+*   *
+*    *
+*******
+
+=== CUT ===
+
+==== Menu ===
+1. View all lines
+2. View all rectangles
+3. View all triangles
+4. Add a new shape
+5. Quit
+Choose an opt:0
