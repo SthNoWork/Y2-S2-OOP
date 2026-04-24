@@ -1,0 +1,8 @@
+{
+  "java.project.referencedLibraries": [
+    "${env:JAVAFX_HOME}/*.jar",
+    "C:/Program Files/Coding Libaries/*.jar"
+  ],
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.debug.settings.vmArgs": "--module-path \"C:/Program Files/Coding Libaries\" --add-modules javafx.controls,javafx.fxml"
+}
