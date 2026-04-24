@@ -1,3 +1,5 @@
+package ex3;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("app.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ex3/app.fxml"));
         stage.setTitle("Vowel / Consonant / Space Counter");
         stage.setScene(new Scene(root));
         stage.show();

@@ -1,3 +1,5 @@
+package ex1;
+
 import java.util.Scanner;
 
 public class Main {
@@ -35,6 +37,7 @@ public class Main {
                     countDistinct(input);
                     break;
                 case 4:
+                    decimalToBinary(input);
                     break;
                 default:
                     System.out.println("Error!");
@@ -51,31 +54,58 @@ public class Main {
             num = Integer.parseInt(input.nextLine());
         } catch (NumberFormatException e) {
             System.out.println("Error!");
-            continue;
+            return;
         }
-        System.out.println("Output is: ");
-        AbstractMath.reverseNumber(option);
+        System.out.println("Output is: " + AbstractMath.reverseNumber(num));
     }
 
     static void roundedNumber(Scanner input) {
-        System.out.println("::: Reverse a number :::");
+        double num;
+        System.out.println("::: Rounded number :::");
         System.out.println("Input number: ");
-        System.out.println("Output is: ");
-        AbstractMath.roundedNumber(option);
+        try {
+            num = Double.parseDouble(input.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Error!");
+            return;
+        }
+        System.out.println("Output is: " + AbstractMath.roundedNumber(num));
     }
 
     static void countDistinct(Scanner input) {
-        System.out.println("::: Reverse a number :::");
-        System.out.println("Input number: ");
-        System.out.println("Output is: ");
-        AbstractMath.countDistinct();
+        System.out.println("::: Count distinct number :::");
+        System.out.println("Input numbers separated by spaces: ");
+        String line = input.nextLine().trim();
+        if (line.isEmpty()) {
+            System.out.println("Output is: 0");
+            return;
+        }
+
+        String[] parts = line.split("\\s+");
+        int[] values = new int[parts.length];
+        try {
+            for (int i = 0; i < parts.length; i++) {
+                values[i] = Integer.parseInt(parts[i]);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Error!");
+            return;
+        }
+
+        System.out.println("Output is: " + AbstractMath.countDistinct(values));
     }
 
     static void decimalToBinary(Scanner input) {
-        System.out.println("::: Reverse a number :::");
+        int decimal;
+        System.out.println("::: Decimal to Binary :::");
         System.out.println("Input number: ");
-        System.out.println("Output is: ");
-        AbstractMath.decimalToBinary(option);
+        try {
+            decimal = Integer.parseInt(input.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Error!");
+            return;
+        }
+        System.out.println("Output is: " + AbstractMath.decimalToBinary(decimal));
 
     }
 
