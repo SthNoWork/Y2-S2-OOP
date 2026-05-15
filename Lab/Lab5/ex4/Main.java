@@ -16,9 +16,24 @@ public class Main {
 
             if (opt == 1)
                 Note.view();
-            else if (opt == 2)
-                Note.editMenu(sc);
-            else if (opt == 3)
+            else if (opt == 2) {
+                System.out.println("==== Edit following note ====");
+                Note.view();
+                System.out.println("1. Append new line");
+                System.out.println("2. Update at line");
+                System.out.println("3. Delete line");
+                System.out.print("Choose an opt: ");
+
+                int editOpt = sc.nextInt();
+                sc.nextLine();
+
+                if (editOpt == 1)
+                    Note.append(sc);
+                else if (editOpt == 2)
+                    Note.update(sc);
+                else if (editOpt == 3)
+                    Note.delete(sc);
+            } else if (opt == 3)
                 break;
         }
     }

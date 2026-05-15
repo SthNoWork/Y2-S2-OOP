@@ -1,70 +1,55 @@
 package ex3;
 
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+import javax.swing.*;
 
-public class Main extends Application {
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/ex3/app.fxml"));
-        stage.setTitle("Vowel / Consonant / Space Counter");
-        stage.setScene(new Scene(root));
-        stage.show();
-    }
-
+public class Main {
     public static void main(String[] args) {
-        launch(args);
-    }
+        JFrame f = new JFrame("First GUI");
+        f.setSize(400, 320);
+        f.setLayout(null);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    @FXML
-    private Button findButton;
+        JLabel title = new JLabel("Count number of Vowel, Consonant and Space");
+        title.setBounds(20, 15, 360, 20);
+        f.add(title);
 
-    @FXML
-    private Label lable_Consonant;
+        JLabel textLabel = new JLabel("Text:");
+        textLabel.setBounds(20, 45, 50, 20);
+        f.add(textLabel);
 
-    @FXML
-    private Label lable_Space;
+        JTextField textField = new JTextField();
+        textField.setBounds(20, 65, 200, 25);
+        f.add(textField);
 
-    @FXML
-    private Label lable_Vowel;
+        JButton findBtn = new JButton("Find");
+        findBtn.setBounds(20, 105, 80, 25);
+        f.add(findBtn);
 
-    @FXML
-    private TextField textfield;
+        JLabel vowelLabel = new JLabel("");
+        vowelLabel.setBounds(20, 145, 300, 20);
+        f.add(vowelLabel);
 
-    @FXML
-    public void handleButton(ActionEvent event) {
-        String input = textfield.getText();
-        int vowelCount = 0;
-        int consonantCount = 0;
-        int spaceCount = 0;
+        JLabel consonantLabel = new JLabel("");
+        consonantLabel.setBounds(20, 165, 300, 20);
+        f.add(consonantLabel);
 
-        if (input != null) {
-            for (char ch : input.toCharArray()) {
-                if (Character.isWhitespace(ch)) {
-                    spaceCount++;
-                } else if (Character.isLetter(ch)) {
-                    char lower = Character.toLowerCase(ch);
-                    if (lower == 'a' || lower == 'e' || lower == 'i' || lower == 'o' || lower == 'u') {
-                        vowelCount++;
-                    } else {
-                        consonantCount++;
-                    }
-                }
+        JLabel spaceLabel = new JLabel("");
+        spaceLabel.setBounds(20, 185, 300, 20);
+        f.add(spaceLabel);
+
+        findBtn.addActionListener(e -> {
+            String text = textField.getText().toLowerCase();
+            int vowels = 0, consonants = 0, spaces = 0;
+            for (char c : text.toCharArray()) {
+                if (c == ' ') spaces++;
+                else if ("aeiou".indexOf(c) >= 0) vowels++;
+                else if (Character.isLetter(c)) consonants++;
             }
-        }
+            vowelLabel.setText("Count of vowel is: " + vowels);
+            consonantLabel.setText("Count of consonant is: " + consonants);
+            spaceLabel.setText("Count of space is: " + spaces);
+        });
 
-        lable_Vowel.setText("Count of Vowel is: " + vowelCount);
-        lable_Consonant.setText("Count of Consonant is: " + consonantCount);
-        lable_Space.setText("Count of Space is: " + spaceCount);
+        f.setVisible(true);
     }
-
 }

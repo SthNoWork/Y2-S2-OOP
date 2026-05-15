@@ -14,7 +14,7 @@ public class Note {
         Path p = Paths.get(PATH);
         if (!Files.exists(p))
             return new ArrayList<>();
-        return new ArrayList<>(Files.readAllLines(p));
+        return new ArrayList<>(Files.readAllLines(p)); // List<String> to ArrayList
     }
 
     private static void save(List<String> lines) throws IOException {
@@ -38,22 +38,11 @@ public class Note {
     public static void editMenu(Scanner sc) throws IOException {
         System.out.println("==== Edit following note ====");
         printNote(load());
-        System.out.println("1. Append new line");
-        System.out.println("2. Update at line");
-        System.out.println("3. Delete line");
-        System.out.print("Choose an opt: ");
-        int opt = sc.nextInt();
-        sc.nextLine();
-        if (opt == 1)
-            append(sc);
-        else if (opt == 2)
-            update(sc);
-        else if (opt == 3)
-            delete(sc);
+        System.out.println("(Note: menu handling moved to Main.main())");
     }
 
     // ── Edit Operations ───────────────────────────────────────
-    private static void append(Scanner sc) throws IOException {
+    public static void append(Scanner sc) throws IOException {
         List<String> lines = load();
         int next = lines.size() + 1;
         System.out.println("Input a string for line #" + next + ":");
@@ -62,7 +51,7 @@ public class Note {
         System.out.println("Line #" + next + " is appended to the note.");
     }
 
-    private static void update(Scanner sc) throws IOException {
+    public static void update(Scanner sc) throws IOException {
         List<String> lines = load();
         System.out.print("Update line number: ");
         int num = sc.nextInt();
@@ -73,7 +62,7 @@ public class Note {
         System.out.println("Line #" + num + " is updated.");
     }
 
-    private static void delete(Scanner sc) throws IOException {
+    public static void delete(Scanner sc) throws IOException {
         List<String> lines = load();
         System.out.print("Delete line number: ");
         int num = sc.nextInt();
