@@ -1,0 +1,178 @@
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 1
+:::: Account List ::::
+No #1
+ACC_ID: 00000000111
+ACC_HOLDER: Mesa Mina
+ACC_BALANCE: 403.34$
+No #2
+ACC_ID: 00000000222
+ACC_HOLDER: Tola Kompheak
+ACC_BALANCE: 803.34$
+No #3
+ACC_ID: 00000000333
+ACC_HOLDER: Tola Mokara
+ACC_BALANCE: 603.34$
+No #4
+ACC_ID: 000000004444
+ACC_HOLDER: Tola Seyha
+ACC_BALANCE: 203.34$
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 2
+ACC_ID: 00000000555
+ACC_HOLDER: Dara Sopha
+ACC_BALANCE: 500.00
+Account created successfully.
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 3
+ACC_ID: 00000000111
+Amount: 200.50
+Deposited 200.50$ to 00000000111
+New balance: 603.84$
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 3
+ACC_ID: 00000000111
+Amount: 100.1234
+Error: Invalid amount format. Use up to 2 decimal places (e.g. 100.50)
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 3
+ACC_ID: 00000000111
+Amount: 1500.00
+Error: Deposit amount must be > 0 and <= 1000.0$
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 4
+ACC_ID: 000000004444
+Amount: 300.00
+Error: Insufficient funds. Balance cannot go below 0.0$
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 4
+ACC_ID: 000000004444
+Amount: 100.00
+Withdrew 100.00$ from 000000004444
+New balance: 103.34$
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 5
+From ACC_ID: 00000000222
+To ACC_ID: 00000000333
+Amount: 150.00
+Transferred 150.00$ from 00000000222 to 00000000333
+00000000222 new balance: 653.34$
+00000000333 new balance: 753.34$
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 5
+From ACC_ID: 00000000999
+To ACC_ID: 00000000333
+Amount: 50.00
+Error: Account not found: 00000000999
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 1
+:::: Account List ::::
+No #1
+ACC_ID: 00000000111
+ACC_HOLDER: Mesa Mina
+ACC_BALANCE: 603.84$
+No #2
+ACC_ID: 00000000222
+ACC_HOLDER: Tola Kompheak
+ACC_BALANCE: 653.34$
+No #3
+ACC_ID: 00000000333
+ACC_HOLDER: Tola Mokara
+ACC_BALANCE: 753.34$
+No #4
+ACC_ID: 000000004444
+ACC_HOLDER: Tola Seyha
+ACC_BALANCE: 103.34$
+No #5
+ACC_ID: 00000000555
+ACC_HOLDER: Dara Sopha
+ACC_BALANCE: 500.00$
+
+
+:::: The Bank ::::
+1. Account List
+2. Create an account
+3. Deposit to an account
+4. Withdraw from an account
+5. Transfer to another account
+6. Quit
+Choose an opt: 6
+Goodbye!

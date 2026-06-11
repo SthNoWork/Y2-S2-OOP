@@ -1,0 +1,148 @@
+:::: The GRID ::::
+   0 1 2 3 4 5 6
+   - - - - - - -
+0 - 0 0 0 0 0 0 0
+1 - 0 0 0 0 0 0 0
+2 - 0 0 0 0 0 0 0
+3 - 0 0 0 0 0 0 0
+4 - 0 0 0 0 0 0 0
+5 - 0 0 0 0 0 0 0
+6 - 0 0 0 0 0 0 0
+1. Update a single cell
+2. Insert at a row
+3. Insert at a column
+4. Clear at a row
+5. Clear at a column
+6. Clear all
+7. Quit
+Choose an opt: 1
+Row: 1
+Col: 5
+Value: 6
+
+
+:::: The GRID ::::
+   0 1 2 3 4 5 6
+   - - - - - - -
+0 - 0 0 0 0 0 0 0
+1 - 0 0 0 0 0 6 0
+2 - 0 0 0 0 0 0 0
+3 - 0 0 0 0 0 0 0
+4 - 0 0 0 0 0 0 0
+5 - 0 0 0 0 0 0 0
+6 - 0 0 0 0 0 0 0
+1. Update a single cell
+2. Insert at a row
+3. Insert at a column
+4. Clear at a row
+5. Clear at a column
+6. Clear all
+7. Quit
+Choose an opt: 2
+Row number: 3
+Enter 7 values: 1 2 3 4 5 6 7
+
+
+:::: The GRID ::::
+   0 1 2 3 4 5 6
+   - - - - - - -
+0 - 0 0 0 0 0 0 0
+1 - 0 0 0 0 0 6 0
+2 - 0 0 0 0 0 0 0
+3 - 1 2 3 4 5 6 7
+4 - 0 0 0 0 0 0 0
+5 - 0 0 0 0 0 0 0
+6 - 0 0 0 0 0 0 0
+1. Update a single cell
+2. Insert at a row
+3. Insert at a column
+4. Clear at a row
+5. Clear at a column
+6. Clear all
+7. Quit
+Choose an opt: 3
+Column number: 0
+Enter 7 values: 9 8 7 6 5 4 3
+
+
+:::: The GRID ::::
+   0 1 2 3 4 5 6
+   - - - - - - -
+0 - 9 0 0 0 0 0 0
+1 - 8 0 0 0 0 6 0
+2 - 7 0 0 0 0 0 0
+3 - 6 2 3 4 5 6 7
+4 - 5 0 0 0 0 0 0
+5 - 4 0 0 0 0 0 0
+6 - 3 0 0 0 0 0 0
+1. Update a single cell
+2. Insert at a row
+3. Insert at a column
+4. Clear at a row
+5. Clear at a column
+6. Clear all
+7. Quit
+Choose an opt: 4
+Row number: 3
+
+
+:::: The GRID ::::
+   0 1 2 3 4 5 6
+   - - - - - - -
+0 - 9 0 0 0 0 0 0
+1 - 8 0 0 0 0 6 0
+2 - 7 0 0 0 0 0 0
+3 - 0 0 0 0 0 0 0
+4 - 5 0 0 0 0 0 0
+5 - 4 0 0 0 0 0 0
+6 - 3 0 0 0 0 0 0
+1. Update a single cell
+2. Insert at a row
+3. Insert at a column
+4. Clear at a row
+5. Clear at a column
+6. Clear all
+7. Quit
+Choose an opt: 5
+Column number: 0
+
+
+:::: The GRID ::::
+   0 1 2 3 4 5 6
+   - - - - - - -
+0 - 0 0 0 0 0 0 0
+1 - 0 0 0 0 0 6 0
+2 - 0 0 0 0 0 0 0
+3 - 0 0 0 0 0 0 0
+4 - 0 0 0 0 0 0 0
+5 - 0 0 0 0 0 0 0
+6 - 0 0 0 0 0 0 0
+1. Update a single cell
+2. Insert at a row
+3. Insert at a column
+4. Clear at a row
+5. Clear at a column
+6. Clear all
+7. Quit
+Choose an opt: 6
+
+
+:::: The GRID ::::
+   0 1 2 3 4 5 6
+   - - - - - - -
+0 - 0 0 0 0 0 0 0
+1 - 0 0 0 0 0 0 0
+2 - 0 0 0 0 0 0 0
+3 - 0 0 0 0 0 0 0
+4 - 0 0 0 0 0 0 0 
+5 - 0 0 0 0 0 0 0
+6 - 0 0 0 0 0 0 0
+1. Update a single cell
+2. Insert at a row
+3. Insert at a column
+4. Clear at a row
+5. Clear at a column
+6. Clear all
+7. Quit
+Choose an opt: 7
+Goodbye!
